@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXEMPLO 1 JS</title>
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+
+            button {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 250px;
+                height: 70px;
+                border-radius: 20px;
+                border: none;
+                background-color: black;
+                color: white;
+                font-size: medium;
+                cursor: pointer;
+            }
+
+            button:hover {
+                color: black;
+                background-color: grey;
+                transition: 0.5s;
+            }
+
+            .alerta {
+                display: none;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 1000;
+                background-color: red;
+                padding: 100px;
+                border-radius: 10px;
+                color: white;
+                width: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>EXEMPLO 1 JS</h1>
+    <button id="botao">ATIVAR ALERTA</button>
+
+    <div class="alerta" id="modal">
+        <h1>ATENÇÃO!</h1>
+        <p>Este é um alerta e irá sumir em 3 segundos!</p>
+    </div>
+</body>
+
+<script>
+
+    let modal = document.getElementById('modal');
+    document.getElementById('botao').addEventListener('click', function () {
+        // alert('este é um alerta!');
+        modal.style.display = 'block';
+
+        setTimeout(function () {
+            modal.style.display = 'none';
+        }, 3000);
+    });
+
+</script>
+
+</html>
